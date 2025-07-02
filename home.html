@@ -137,14 +137,24 @@
     <h2 class="section-title">Projects</h2>
 
     <!-- Lensora -->
-    <div class="project-card">
-      <img src="image/Landingpage.PNG" alt="Lensora Project" class="project-image">
-      <div class="project-content">
-        <h4>Lensora</h4>
-        <small class="text-muted">Nature Blog Platform (MERN Stack) — 2025</small>
-        <p>Built a nature-focused blog using MERN stack. Backend with Node.js & MongoDB Atlas. Frontend with React + Vite styled using Tailwind CSS.</p>
-      </div>
+   <div class="project-card">
+  <div class="image-slider">
+    <img id="lensora-img" src="image/Landingpage.PNG" class="project-image" alt="Lensora Image">
+    <div class="slider-controls">
+      <button onclick="changeImage(-1, 'lensora')">⟨</button>
+      <button onclick="changeImage(1, 'lensora')">⟩</button>
     </div>
+  </div>
+  <div class="project-content mt-3">
+    <h4>Lensora</h4>
+    <small class="text-muted">Nature Blog Platform (MERN Stack) — 2025</small>
+    <p>
+      Built a nature-focused blog using the MERN stack. Backend with Node.js & MongoDB Atlas.
+      Frontend built with React + Vite and styled using Tailwind CSS.
+    </p>
+  </div>
+</div>
+
 
     <!-- AnalytIQ -->
     <div class="project-card">
@@ -230,4 +240,20 @@
     <p>&copy; 2025 Rojin Roy Mathew. All rights reserved.</p>
   </footer>
 </body>
+<script>
+  const lensoraImages = [
+    "image/Landingpage.PNG",
+    "image/github1.PNG",
+    "image/trait 1.PNG"
+  ];
+  let lensoraIndex = 0;
+
+  function changeImage(step, id) {
+    if (id === "lensora") {
+      lensoraIndex = (lensoraIndex + step + lensoraImages.length) % lensoraImages.length;
+      document.getElementById("lensora-img").src = lensoraImages[lensoraIndex];
+    }
+  }
+</script>
+
 </html>
