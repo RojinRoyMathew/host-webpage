@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .project-image {
+      max-height: 400px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      height: 120px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .project-container {
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5 project-container">
+    <h1 id="project-title">Loading...</h1>
+    <p class="text-muted" id="project-subtitle"></p>
+    <div class="mb-4 gallery" id="project-gallery"></div>
+    <div id="project-description"></div>
+    <a href="home.html" class="btn btn-secondary mt-4">← Back to Portfolio</a>
+  </div>
+
+  <script>
+    const projects = {
+      lensora: {
+        title: "Lensora",
+        subtitle: "Nature Blog Platform (MERN Stack) — 2025",
+        description: `
+          <p>Lensora is a MERN-based blog platform for nature content.</p>
+          <ul>
+            <li>Frontend: React + Vite + Tailwind CSS</li>
+            <li>Backend: Node.js + Express</li>
+            <li>Database: MongoDB Atlas</li>
+          </ul>`,
+        images: ["image/Landingpage.PNG", "image/Lensora2.PNG"]
+      },
+      analytIQ: {
+        title: "AnalytIQ",
+        subtitle: "Frontend Dashboard & Tracker — 2025",
+        description: `
+          <p>React.js + CSS dashboard UI with metrics and charts.</p>
+          <ul>
+            <li>No external UI frameworks used</li>
+            <li>Pure CSS layout and component design</li>
+          </ul>`,
+        images: ["image/Capture 1.PNG"]
+      },
+      trucklink: {
+        title: "Truck Link Logistics",
+        subtitle: "Mini Project — 2023",
+        description: `
+          <p>PHP application to find cheapest truck rates.</p>
+          <ul>
+            <li>Driver comparison and negotiation system</li>
+            <li>Search by shipment weight and distance</li>
+          </ul>`,
+        images: ["image/home-main.PNG"]
+      },
+      bloodbank: {
+        title: "World Blood Bank Unit",
+        subtitle: "DBMS Project — 2023",
+        description: `
+          <p>Blood donation system built with PHP, HTML, MySQL.</p>
+          <ul>
+            <li>Search by rare blood group</li>
+            <li>Alert system for emergency requests</li>
+            <li>Donor and receiver management</li>
+          </ul>`,
+        images: ["image/dbms.PNG"]
+      },
+      bookhaven: {
+        title: "Book Haven",
+        subtitle: "Online Bookstore — 2024",
+        description: `
+          <p>Developed using Django and PostgreSQL.</p>
+          <ul>
+            <li>Search, filter, and recommend books</li>
+            <li>User login & personalized dashboard</li>
+          </ul>`,
+        images: ["image/bookstore-home2.PNG"]
+      },
+      mobilebazaar: {
+        title: "Mobile Bazaar",
+        subtitle: "E-commerce Platform — 2024",
+        description: `
+          <p>E-commerce app using Node.js, Handlebars, and MongoDB.</p>
+          <ul>
+            <li>User orders and cart</li>
+            <li>Admin control panel</li>
+          </ul>`,
+        images: ["image/mobile-home-phase.PNG"]
+      },
+      insightcore: {
+        title: "InsightCore",
+        subtitle: "Personality Prediction Web App — 2025",
+        description: `
+          <p>CV-based NLP tool to enhance hiring decisions.</p>
+          <ul>
+            <li>Analyzes personality traits</li>
+            <li>Supports job-matching process</li>
+          </ul>`,
+        images: ["image/main.PNG"]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const project = projects[id];
+
+    if (project) {
+      document.getElementById("project-title").textContent = project.title;
+      document.getElementById("project-subtitle").textContent = project.subtitle;
+      document.getElementById("project-description").innerHTML = project.description;
+
+      const gallery = document.getElementById("project-gallery");
+      project.images.forEach(img => {
+        const image = document.createElement("img");
+        image.src = img;
+        gallery.appendChild(image);
+      });
+    } else {
+      document.getElementById("project-title").textContent = "Project Not Found";
+      document.getElementById("project-subtitle").textContent = "";
+      document.getElementById("project-description").innerHTML = "<p>Invalid or missing project ID.</p>";
+    }
+  </script>
+</body>
+</html>
