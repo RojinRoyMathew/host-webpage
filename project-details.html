@@ -5,38 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Details</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    .project-image {
-      max-height: 400px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .gallery {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .gallery img {
-      height: 500px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .project-container {
-      max-width: 900px;
-      margin: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="css/detail.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" integrity="sha512-MWxyHpi9FxIzQBh5BlLKV9byHcbOlA7xdwCN0VZpp4k0IPkWaHRHFqGqLoKZsGcg0uuhDFlrBlfvRE6UPDaTIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="container py-5 project-container">
     <h1 id="project-title">Loading...</h1>
     <p class="text-muted" id="project-subtitle"></p>
-    <div class="mb-4 gallery" id="project-gallery"></div>
+    <div id="project-gallery" class="glightbox-gallery mb-4"></div>
     <div id="project-description"></div>
     <a href="home.html" class="btn btn-secondary mt-4">← Back to Portfolio</a>
   </div>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/glightbox.min.js" integrity="sha512-WKyPYcE9ZQ+53n7EtB69Kk5e5iqQ5yEFWzYG5Oe6biIkpmFucE9LOxE6feyGBKxYdR3BevPlBSLtcPyRpFAKWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const projects = {
       lensora: {
@@ -159,11 +139,22 @@
       document.getElementById("project-description").innerHTML = project.description;
 
       const gallery = document.getElementById("project-gallery");
-      project.images.forEach(img => {
+      project.images.forEach((img, i) => {
+        const anchor = document.createElement("a");
+        anchor.href = img;
+        anchor.setAttribute("class", "glightbox");
+        anchor.setAttribute("data-gallery", "project-gallery");
+        anchor.setAttribute("data-title", `${project.title} - Image ${i + 1}`);
+
         const image = document.createElement("img");
         image.src = img;
-        gallery.appendChild(image);
+        image.alt = `${project.title} Image ${i + 1}`;
+
+        anchor.appendChild(image);
+        gallery.appendChild(anchor);
       });
+
+      GLightbox({ selector: ".glightbox" });
     } else {
       document.getElementById("project-title").textContent = "Project Not Found";
       document.getElementById("project-subtitle").textContent = "";

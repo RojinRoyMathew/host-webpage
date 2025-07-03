@@ -1,0 +1,40 @@
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .project-container {
+      max-width: 960px;
+      margin: auto;
+    }
+    .glightbox-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .glightbox-gallery a {
+      width: 30%;
+      min-width: 200px;
+      flex-grow: 1;
+    }
+    .glightbox-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .glightbox-gallery img:hover {
+      transform: scale(1.03);
+    }
+    @media (max-width: 768px) {
+      .glightbox-gallery a {
+        width: 48%;
+      }
+    }
+    @media (max-width: 480px) {
+      .glightbox-gallery a {
+        width: 100%;
+      }
+    }
