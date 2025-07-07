@@ -156,7 +156,7 @@
 
 .about-content {
   flex: 2 1 500px;
-  text-align: left;
+  text-align: justify;
 }
 
 .about-content h2 {
