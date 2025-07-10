@@ -78,20 +78,26 @@
     </div>
   </div>
 </section>
-
-<section id="experience" class="py-5 bg-light">
+<!-- Experience Section -->
+<section id="experience" class="py-5 bg-light border-top">
   <div class="container">
-    <h2 class="text-center fw-bold mb-5">💼 Professional Experience</h2>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-uppercase">💼 Professional Experience</h2>
+      <p class="text-muted">An overview of my development journey across technologies and domains.</p>
+    </div>
 
-    <!-- Experience Cards -->
-    <div class="row g-4">
+    <div class="accordion" id="experienceAccordion">
+
       <!-- MERN Stack Developer -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">MERN Stack Developer <span class="text-muted fs-6">— 06/2025</span></h5>
-            <p class="text-muted mb-2">Freelance / Project Work | Technologies: MongoDB, Express.js, React.js, Node.js, Tailwind CSS</p>
-            <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingMERN">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMERN" aria-expanded="true" aria-controls="collapseMERN">
+            MERN Stack Developer — 06/2025 · Freelance / Project Work
+          </button>
+        </h2>
+        <div id="collapseMERN" class="accordion-collapse collapse show" aria-labelledby="headingMERN" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
               <li>Designed scalable full-stack apps using MERN stack for academic/personal projects.</li>
               <li><strong>Lensora</strong>: React UI, Express API, MongoDB Atlas, JWT-based auth.</li>
               <li>Built RESTful APIs, handled CRUD, auth, and MongoDB schema using Mongoose.</li>
@@ -102,12 +108,16 @@
       </div>
 
       <!-- Full Stack Developer -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Full Stack Developer <span class="text-muted fs-6">— 08/2024</span></h5>
-            <p class="text-muted mb-2">Freelance / Project Work | Technologies: React.js, Express.js, Handlebars, Django, MongoDB, MySQL</p>
-            <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFullStack">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStack" aria-expanded="false" aria-controls="collapseFullStack">
+            Full Stack Developer — 08/2024 · Freelance / Project Work
+          </button>
+        </h2>
+        <div id="collapseFullStack" class="accordion-collapse collapse" aria-labelledby="headingFullStack" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Worked with React.js, Express.js, Django, MongoDB, MySQL for scalable web apps.</li>
               <li>Developed scalable full-stack apps using JS & Python tech stacks.</li>
               <li><strong>Lensora:</strong> React SPA with Hooks, integrated REST API.</li>
               <li><strong>AnalytIQ:</strong> React dashboard, role-based UI.</li>
@@ -119,12 +129,15 @@
       </div>
 
       <!-- PHP Developer -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">PHP Developer <span class="text-muted fs-6">— 09/2023</span></h5>
-            <p class="text-muted mb-2">Freelance / Academic Projects | Technologies: PHP, MySQL, HTML, CSS, MySQLi</p>
-            <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPHP">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePHP" aria-expanded="false" aria-controls="collapsePHP">
+            PHP Developer — 09/2023 · Freelance / Academic Projects
+          </button>
+        </h2>
+        <div id="collapsePHP" class="accordion-collapse collapse" aria-labelledby="headingPHP" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
               <li><strong>World Blood Bank Unit:</strong> Donor search/filter system.</li>
               <li><strong>Truck Link Logistics:</strong> Transport management with cost comparison & feedback.</li>
               <li>Built secure CRUD dashboards and deployed on local servers (XAMPP/WAMP).</li>
@@ -134,12 +147,15 @@
       </div>
 
       <!-- Frontend Developer -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Frontend Developer <span class="text-muted fs-6">— 09/2023</span></h5>
-            <p class="text-muted mb-2">Freelance / Academic Projects | Technologies: React.js, HTML, CSS, Bootstrap, Tailwind CSS</p>
-            <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFrontend">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFrontend" aria-expanded="false" aria-controls="collapseFrontend">
+            Frontend Developer — 09/2023 · Freelance / Academic Projects
+          </button>
+        </h2>
+        <div id="collapseFrontend" class="accordion-collapse collapse" aria-labelledby="headingFrontend" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
               <li>Developed intuitive UIs across Lensora, AnalytIQ, Mobile Bazaar, Book Haven.</li>
               <li>Used React, Bootstrap, and Tailwind to ensure mobile responsiveness.</li>
               <li>Collaborated with backend teams to integrate APIs and dynamic content.</li>
@@ -149,12 +165,15 @@
       </div>
 
       <!-- HTML/CSS Developer -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0">
-          <div class="card-body">
-            <h5 class="card-title fw-bold">HTML/CSS Developer <span class="text-muted fs-6">— 05/2020</span></h5>
-            <p class="text-muted mb-2">Freelance / Academic Projects | Technologies: HTML5, CSS3, Bootstrap, JavaScript</p>
-            <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHTML">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHTML" aria-expanded="false" aria-controls="collapseHTML">
+            HTML/CSS Developer — 05/2020 · Freelance / Academic Projects
+          </button>
+        </h2>
+        <div id="collapseHTML" class="accordion-collapse collapse" aria-labelledby="headingHTML" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
               <li>Built responsive UI using Flexbox, Grid, and modern media queries.</li>
               <li>Styled major projects like Book Haven, Lensora, and InsightCore.</li>
               <li>Created interactive forms, modals, layouts, and components.</li>
@@ -163,24 +182,26 @@
         </div>
       </div>
 
-      
       <!-- Academic Lab Experience -->
-<div class="col-12">
-  <div class="card shadow-sm border-0">
-    <div class="card-body">
-      <h5 class="card-title fw-bold">Academic Lab Experience <span class="text-muted fs-6">— 11/2021</span></h5>
-      <p class="text-muted mb-2">Lab Work / Academic Theory / Academic Projects | Technologies: Overleaf, Linux</p>
-      <ul class="mb-0">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingLab">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLab" aria-expanded="false" aria-controls="collapseLab">
+            Academic Lab Experience — 11/2021 · Academic Theory / Projects
+          </button>
+        </h2>
+        <div id="collapseLab" class="accordion-collapse collapse" aria-labelledby="headingLab" data-bs-parent="#experienceAccordion">
+          <div class="accordion-body">
+            <ul>
         <li>Practiced <strong>C, Java, and Python</strong> in lab sessions for Data Structures & Algorithms.</li>
         <li>Simulated digital circuits using <strong>Verilog HDL</strong> in Digital Logic Design Lab.</li>
         <li>Worked with <strong>8085 and 8086 assembly language</strong> for microprocessor programming.</li>
         <li>Implemented <strong>CPU scheduling, memory management, and Banker's Algorithm</strong> in Linux OS environment.</li>
         <li>Performed <strong>socket programming</strong> and simulated networking protocols (TCP, UDP, ICMP) in Networking Lab.</li>
         <li>Prepared structured academic reports using <strong>LaTeX</strong> with citations and formatting.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+            </ul>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
